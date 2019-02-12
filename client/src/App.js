@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import './App.css'; 
 import AuthHelperMethods from './components/AuthHelperMethods';
 import withAuth from './components/withAuth';
+import Search from './components/Search/Search';
+import SearchForm from './components/Search/SearchForm';
+
 
 class App extends Component {
 
-/* Create a new instance of the 'AuthHelperMethods' compoenent*/
+/* Create a new instance of the 'AuthHelperMethods' component*/
   Auth = new AuthHelperMethods();
 
   state = {
@@ -34,11 +37,18 @@ class App extends Component {
           <div className="top-section">
             <h1>Welcome, {name}</h1>
           </div>
+          <div >
+            <Search />
+            <SearchForm />
+          </div>
           <div className="bottom-section">
             <button onClick={this._handleLogout}>LOGOUT</button>
           </div>
+          <div>
+            <h1>this is the user page! app.js</h1>
         </div>
-      </div>
+        </div>
+        </div>
     );
   }
 }
