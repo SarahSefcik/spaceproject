@@ -4,6 +4,10 @@ import AuthHelperMethods from './components/AuthHelperMethods';
 import withAuth from './components/withAuth';
 import Search from './components/Search/Search';
 import SearchForm from './components/Search/SearchForm';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Items from "./pages/Items";
+import Detail from "./pages/Detail";
+import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 
 
