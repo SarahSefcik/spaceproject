@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css'; 
 import AuthHelperMethods from './components/AuthHelperMethods';
 import withAuth from './components/withAuth';
 import Search from './components/Search/Search';
 import SearchForm from './components/Search/SearchForm';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Items from "./pages/Items";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
@@ -37,13 +37,22 @@ class App extends Component {
     }
 
     return (
+      <Router>
+        <div>
+          <Nav />
+          <Switch>
+            <Route exact path="/" component={Items} />
+            <Route exact path="/items" component={Items} />
+            <Route exact path="/items/:id" component={Detail} />
+            <Route component={NoMatch} />
+          </Switch>
+        </div>
       <div className="App">
         <div className="main-page">
           <div className="top-section">
             <h1>Welcome, {name}</h1>
           </div>
           <div >
-            <Nav />
             <Search />
             <SearchForm />
           </div>
@@ -54,7 +63,8 @@ class App extends Component {
             <h1>this is the user page! app.js</h1>
         </div>
         </div>
-        </div>
+      </div>
+      </Router>
     );
   }
 }
