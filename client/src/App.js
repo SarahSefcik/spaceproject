@@ -4,6 +4,7 @@ import AuthHelperMethods from './components/AuthHelperMethods';
 import withAuth from './components/withAuth';
 import Search from './components/Search/Search';
 import SearchForm from './components/Search/SearchForm';
+import Nav from "./components/Nav";
 
 
 class App extends Component {
@@ -38,6 +39,7 @@ class App extends Component {
             <h1>Welcome, {name}</h1>
           </div>
           <div >
+            <Nav />
             <Search />
             <SearchForm />
           </div>
